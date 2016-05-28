@@ -3,11 +3,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import domain.Employee;
 
 public class Main {
 
 	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext();
+		
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myDatabase");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		
